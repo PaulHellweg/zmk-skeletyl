@@ -5,6 +5,9 @@
  * See https://github.com/urob/zmk-nodefree-config for documentation.
  */
 
+
+#include "../zmk-nodefree-config/helper.h"
+
 #pragma once
 
 #define ZMK_HELPER_STRINGIFY(x) #x
