@@ -103,7 +103,7 @@
 
         tri_layer {
             bindings = <
-&sys_reset   &trans          &kp UP_ARROW    &trans           &bt BT_SEL 0    &out OUT_USB  &out OUT_BLE  &none         &trans           &sys_reset
+&kp ESCAPE   &sys_reset      &kp UP_ARROW    &trans           &bt BT_SEL 0    &out OUT_USB  &out OUT_BLE  &none         &trans           &sys_reset
 &bootloader  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &bt BT_SEL 1    &kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT_ARROW  &bootloader
 &trans       &kp LA(TAB)     &bt BT_CLR_ALL  &bt BT_CLR       &bt BT_SEL 2    &trans        &trans        &trans        &trans           &trans
                              &none           &trans           &trans          &trans        &trans        &none
