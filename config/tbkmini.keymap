@@ -85,10 +85,10 @@
 
         right_layer {
             bindings = <
-&kp LS(N1)     &kp LS(N2)   &kp LS(N3)    &kp LS(N4)    &kp LS(N5)      &kp LS(N6)    &kp LS(N7)  &kp LS(N8)  &kp LS(EQUAL)  &kp LS(GRAVE)
-&kp LBKT       &kp RBKT     &kp LS(N9)    &kp LS(N0)    &kp ESCAPE      &kp LS(BSLH)  &kp EQUAL   &tdquote    &kp MINUS      &kp LS(SEMI)
-&kp LS(COMMA)  &kp LS(DOT)  &kp LS(LBKT)  &kp LS(RBKT)  &kp LEFT_ALT    &kp BSLH      &kp QMARK   &kp GRAVE   &kp LS(MINUS)  &trans
-                            &none         &trans        &kp TAB         &trans        &trans      &none
+&kp EXCLAMATION  &kp AT_SIGN       &kp HASH              &kp DOLLAR             &kp PERCENT     &kp CARET  &kp AMPERSAND  &kp STAR   &kp EQUAL  &kp TILDE
+&kp LBKT         &kp RBKT          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ESCAPE      &kp PIPE   &kp EQUAL      &tdquote   &kp MINUS  &kp COLON
+&kp LESS_THAN    &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LEFT_ALT    &kp BSLH   &kp QMARK      &kp GRAVE  &kp UNDER  &trans
+                                   &none                 &trans                 &kp TAB         &trans     &trans         &none
             >;
         };
 
