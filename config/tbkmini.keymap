@@ -53,6 +53,34 @@
             require-prior-idle-ms = <80>;
             bindings = <&mo>, <&kp>;
         };
+
+        a: a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "A";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp SQT>;
+        };
+
+        s: s {
+            compatible = "zmk,behavior-tap-dance";
+            label = "S";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp MINUS>;
+        };
+
+        u: u {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp LEFT_BRACKET>;
+        };
+
+        o: o {
+            compatible = "zmk,behavior-tap-dance";
+            label = "O";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp SEMI>;
+        };
     };
 
     combos {
@@ -76,10 +104,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &kp W           &kp E               &kp R                      &kp T     &kp Y                         &hrmod LEFT_BRACKET U  &kp I                    &hrmod SEMICOLON O  &kp P
-&hrmod SQT A  &hrmod MINUS S  &kp D               &kp F                      &kp G     &kp H                         &kp J                  &kp K                    &kp L               &hrmod LEFT_GUI LS(COMMA)
-&kp Z         &kp X           &kp C               &kp V                      &kp B     &kp N                         &kp M                  &kp COMMA                &kp DOT             &kp FSLH
-                              &hrmod LCTRL SPACE  &hrmod LEFT_CONTROL SPACE  &tdtab    &hrmod RIGHT_SHIFT BACKSPACE  &hrmod_l 1 ENTER       &hrmod LSHIFT BACKSPACE
+&kp Q  &kp W  &kp E               &kp R                      &kp T     &kp Y                         &u                &kp I                    &o       &kp P
+&a     &s     &kp D               &kp F                      &kp G     &kp H                         &kp J             &kp K                    &kp L    &hrmod LEFT_GUI LS(COMMA)
+&kp Z  &kp X  &kp C               &kp V                      &kp B     &kp N                         &kp M             &kp COMMA                &kp DOT  &kp FSLH
+              &hrmod LCTRL SPACE  &hrmod LEFT_CONTROL SPACE  &tdtab    &hrmod RIGHT_SHIFT BACKSPACE  &hrmod_l 1 ENTER  &hrmod LSHIFT BACKSPACE
             >;
         };
 
