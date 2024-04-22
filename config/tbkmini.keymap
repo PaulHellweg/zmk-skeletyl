@@ -113,10 +113,10 @@
 
         right_layer {
             bindings = <
-&kp LS(EXCLAMATION)   &kp RA(Q)          &kp LS(N7)  &kp LS(NUMBER_4)  &kp LS(N5)      &kp LS(GRAVE)      &kp LS(NUMBER_6)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &kp LA(RIGHT_BRACKET)
-&kp RA(N8)            &kp RA(N9)         &kp LS(N8)  &kp LS(N9)        &kp ESCAPE      &kp LA(LESS_THAN)  &kp LS(N0)        &tdquote               &kp LS(N7)  &kp LS(PERIOD)
-&kp NON_US_BACKSLASH  &kp LS(LESS_THAN)  &kp RA(N7)  &kp RA(N0)        &kp LEFT_ALT    &kp RA(MINUS)      &kp LS(MINUS)     &kp LS(N0)             &kp LS(N7)  &kp LS(EQUAL)
-                                         &none       &trans            &kp TAB         &trans             &trans            &none
+&kp LS(EXCLAMATION)   &kp RA(Q)   &kp LS(N7)  &kp LS(NUMBER_4)  &kp LS(N5)      &kp LS(GRAVE)      &kp LS(NUMBER_6)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &kp LA(RIGHT_BRACKET)
+&kp RA(N8)            &kp RA(N9)  &kp LS(N8)  &kp LS(N9)        &kp ESCAPE      &kp LA(LESS_THAN)  &kp LS(N0)        &tdquote               &kp LS(N7)  &kp LS(PERIOD)
+&kp NON_US_BACKSLASH  &kp PIPE    &kp RA(N7)  &kp RA(N0)        &kp LEFT_ALT    &kp RA(MINUS)      &kp LS(MINUS)     &kp LS(N0)             &kp LS(N7)  &kp LS(EQUAL)
+                                  &none       &trans            &kp TAB         &trans             &trans            &none
             >;
         };
 
