@@ -53,6 +53,34 @@
             require-prior-idle-ms = <80>;
             bindings = <&mo>, <&kp>;
         };
+
+        a: a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "A";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp SQT>;
+        };
+
+        s: s {
+            compatible = "zmk,behavior-tap-dance";
+            label = "S";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&none>;
+        };
+
+        u: u {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp LEFT_BRACKET>;
+        };
+
+        o: o {
+            compatible = "zmk,behavior-tap-dance";
+            label = "O";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp SEMICOLON>;
+        };
     };
 
     combos {
