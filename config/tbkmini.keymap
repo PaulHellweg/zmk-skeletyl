@@ -65,7 +65,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "S";
             #binding-cells = <0>;
-            bindings = <&kp S>, <&none>;
+            bindings = <&kp S>, <&kp MINUS>;
         };
 
         u: u {
