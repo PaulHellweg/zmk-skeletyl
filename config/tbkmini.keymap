@@ -97,6 +97,31 @@
             key-positions = <31 34>;
             bindings = <&mo 3>;
         };
+
+        arrow_up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <2 3>;
+        };
+
+        arrow_down {
+            bindings = <&kp DOWN_ARROW>;
+            key-positions = <12 13>;
+        };
+
+        arrow_right {
+            bindings = <&kp RIGHT_ARROW>;
+            key-positions = <12 13>;
+        };
+
+        arrow_left {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <11 12>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
     };
 
     keymap {
