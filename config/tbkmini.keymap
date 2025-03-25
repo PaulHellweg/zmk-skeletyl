@@ -110,7 +110,7 @@
 
         arrow_right {
             bindings = <&kp RIGHT_ARROW>;
-            key-positions = <12 13>;
+            key-positions = <13 14>;
         };
 
         arrow_left {
