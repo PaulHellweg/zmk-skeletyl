@@ -110,12 +110,12 @@
 
         arrow_right {
             bindings = <&kp RIGHT_ARROW>;
-            key-positions = <13 14>;
+            key-positions = <13 12>;
         };
 
         arrow_left {
             bindings = <&kp LEFT_ARROW>;
-            key-positions = <11 12>;
+            key-positions = <11 10>;
         };
 
         esc {
