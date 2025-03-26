@@ -115,7 +115,7 @@
 
         arrow_left {
             bindings = <&kp LEFT_ARROW>;
-            key-positions = <11 10>;
+            key-positions = <11 12>;
         };
 
         esc {
