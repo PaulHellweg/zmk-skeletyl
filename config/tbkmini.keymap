@@ -165,10 +165,10 @@
 
         layer_4 {
             bindings = <
-&trans   &trans     &trans  &trans  &trans    &trans  &kp LEFT_BRACKET  &trans  &kp SEMI  &trans
-&kp SQT  &kp MINUS  &trans  &trans  &trans    &trans  &trans            &trans  &trans    &trans
-&trans   &trans     &trans  &trans  &trans    &trans  &trans            &trans  &trans    &trans
-                    &trans  &trans  &trans    &trans  &trans            &trans
+&trans   &trans     &trans      &trans  &trans    &trans  &kp LEFT_BRACKET  &trans  &kp SEMI  &trans
+&kp SQT  &kp MINUS  &bt BT_NXT  &trans  &trans    &trans  &trans            &trans  &trans    &trans
+&trans   &trans     &trans      &trans  &trans    &trans  &trans            &trans  &trans    &trans
+                    &trans      &trans  &trans    &trans  &trans            &trans
             >;
         };
     };
