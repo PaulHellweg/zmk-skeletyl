@@ -1,0 +1,179 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// macOS-Variante von tbkmini.keymap, Host-Layout "Deutsch" (ISO).
+// Unterschiede: Ctrl <-> Cmd getauscht, AltGr-Zeichen auf Option-Kombis,
+// ^/° und </> getauscht (macOS vertauscht diese Tasten bei ISO-Fremdtastaturen).
+
+// Home row mods macro
+
+#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
+#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+
+/ {
+    behaviors {
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <100>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        tdtab: tdtab {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp TAB>, <&kp ESCAPE>;
+        };
+
+        tdquote: tdquote {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LS(NON_US_HASH)>, <&kp LS(NUMBER_2)>, <&kp LS(EQUAL)>;
+        };
+
+        hrmod: hrmod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <200>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hrmod_l: hrmod_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <200>;
+            tapping-term-ms = <200>;
+            require-prior-idle-ms = <80>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        a: a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "A";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp SQT>;
+        };
+
+        s: s {
+            compatible = "zmk,behavior-tap-dance";
+            label = "S";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp MINUS>;
+        };
+
+        u: u {
+            compatible = "zmk,behavior-tap-dance";
+            label = "U";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp LEFT_BRACKET>;
+        };
+
+        o: o {
+            compatible = "zmk,behavior-tap-dance";
+            label = "O";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp SEMICOLON>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_numbers {
+            timeout-ms = <50>;
+            key-positions = <30 35>;
+            bindings = <&mo 2>;
+        };
+
+        combo_alt {
+            timeout-ms = <50>;
+            key-positions = <31 34>;
+            bindings = <&mo 3>;
+        };
+
+        arrow_up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <2 3>;
+        };
+
+        arrow_down {
+            bindings = <&kp DOWN_ARROW>;
+            key-positions = <22 23>;
+        };
+
+        arrow_right {
+            bindings = <&kp RIGHT_ARROW>;
+            key-positions = <13 12>;
+        };
+
+        arrow_left {
+            bindings = <&kp LEFT_ARROW>;
+            key-positions = <11 12>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&kp Q  &kp W  &kp E                  &kp R                      &kp T     &kp Y                         &kp U             &kp I                 &kp O    &kp P
+&kp A  &kp S  &kp D                  &kp F                      &kp G     &kp H                         &kp J             &kp K                 &kp L    &hrmod LEFT_CONTROL LS(COMMA)
+&kp Z  &kp X  &kp C                  &kp V                      &kp B     &kp N                         &kp M             &kp COMMA             &kp DOT  &kp FSLH
+              &hrmod LEFT_ALT SPACE  &hrmod LEFT_GUI SPACE  &tdtab    &hrmod RIGHT_SHIFT BACKSPACE  &hrmod_l 1 ENTER  &hrmod_l 4 BACKSPACE
+            >;
+        };
+
+        right_layer {
+            bindings = <
+&kp LS(EXCLAMATION)  &kp LA(L)       &kp NON_US_HASH  &kp LS(NUMBER_4)  &kp LS(N5)      &kp LS(NON_US_BSLH)  &kp LS(NUMBER_6)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &kp RIGHT_BRACKET
+&kp LA(N5)           &kp LA(N6)      &kp LS(N8)       &kp LS(N9)        &kp ESCAPE      &kp LS(NUMBER_6)     &kp LA(N7)        &tdquote               &kp LS(N7)  &kp LS(PERIOD)
+&kp GRAVE            &kp LS(GRAVE)   &kp LA(N8)       &kp LA(N9)        &kp LEFT_ALT    &kp LS(LA(N7))       &kp LS(MINUS)     &kp LS(N0)             &kp LS(N7)  &trans
+                                     &none            &trans            &kp TAB         &trans               &trans            &none
+            >;
+        };
+
+        left_layer {
+            bindings = <
+&kp F12  &kp F7  &kp F8  &kp F9  &kp C_VOL_UP    &kp LS(PG_UP)  &kp N7  &kp N8  &kp N9  &kp LEFT_GUI
+&kp F11  &kp F4  &kp F5  &kp F6  &kp C_VOL_DN    &kp LS(PG_DN)  &kp N4  &kp N5  &kp N6  &kp LCTRL
+&kp F10  &kp F1  &kp F2  &kp F3  &kp K_MUTE      &kp N0         &kp N1  &kp N2  &kp N3  &kp LEFT_SHIFT
+                 &none   &trans  &trans          &trans         &trans  &none
+            >;
+        };
+
+        tri_layer {
+            bindings = <
+&kp ESCAPE   &sys_reset      &kp UP_ARROW    &trans           &bt BT_SEL 0    &out OUT_USB  &out OUT_BLE  &none         &trans           &sys_reset
+&bootloader  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &bt BT_SEL 1    &kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT_ARROW  &bootloader
+&trans       &kp LG(TAB)     &bt BT_CLR_ALL  &bt BT_CLR       &bt BT_SEL 2    &trans        &trans        &trans        &trans           &trans
+                             &none           &trans           &trans          &trans        &trans        &none
+            >;
+        };
+
+        layer_4 {
+            bindings = <
+&trans   &trans     &trans      &trans      &trans    &trans  &kp LEFT_BRACKET  &trans  &kp SEMI  &trans
+&kp SQT  &kp MINUS  &bt BT_NXT  &bt BT_PRV  &trans    &trans  &trans            &trans  &trans    &trans
+&trans   &trans     &trans      &trans      &trans    &trans  &trans            &trans  &trans    &trans
+                    &trans      &trans      &trans    &trans  &trans            &trans
+            >;
+        };
+    };
+};
