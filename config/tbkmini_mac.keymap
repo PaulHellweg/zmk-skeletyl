@@ -87,6 +87,21 @@
         };
     };
 
+    macros {
+        // ~ und ^ sind auf macOS-Deutsch tote Tasten: Zeichen + Leertaste schickt sie direkt
+        mac_tilde: mac_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(N) &kp SPACE>;
+        };
+
+        mac_caret: mac_caret {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp NON_US_BACKSLASH &kp SPACE>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -142,10 +157,10 @@
 
         right_layer {
             bindings = <
-&kp LS(EXCLAMATION)  &kp LA(L)       &kp NON_US_HASH  &kp LS(NUMBER_4)  &kp LS(N5)      &kp LS(NON_US_BSLH)  &kp LS(NUMBER_6)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &kp RIGHT_BRACKET
-&kp LA(N5)           &kp LA(N6)      &kp LS(N8)       &kp LS(N9)        &kp ESCAPE      &kp LS(NUMBER_6)     &kp LA(N7)        &tdquote               &kp LS(N7)  &kp LS(PERIOD)
-&kp GRAVE            &kp LS(GRAVE)   &kp LA(N8)       &kp LA(N9)        &kp LEFT_ALT    &kp LS(LA(N7))       &kp LS(MINUS)     &kp LS(N0)             &kp LS(N7)  &trans
-                                     &none            &trans            &kp TAB         &trans               &trans            &none
+&kp LS(EXCLAMATION)  &kp LA(L)      &kp NON_US_HASH  &kp LS(NUMBER_4)  &kp LS(N5)    &kp LS(NON_US_BSLH)  &kp LS(NUMBER_6)  &kp LS(RIGHT_BRACKET)  &kp LS(N0)  &kp RIGHT_BRACKET
+&kp LA(N5)           &kp LA(N6)     &kp LS(N8)       &kp LS(N9)        &kp ESCAPE    &mac_tilde           &kp LA(N7)        &tdquote               &kp LS(N7)  &kp LS(PERIOD)
+&kp GRAVE            &kp LS(GRAVE)  &kp LA(N8)       &kp LA(N9)        &kp LEFT_ALT  &kp LS(LA(N7))       &kp LS(MINUS)     &mac_caret             &kp LA(E)   &trans
+                                    &none            &trans            &kp TAB       &trans               &trans            &none
             >;
         };
 
@@ -160,7 +175,7 @@
 
         tri_layer {
             bindings = <
-&kp ESCAPE   &sys_reset      &kp UP_ARROW    &trans           &bt BT_SEL 0    &out OUT_USB  &out OUT_BLE  &none         &trans           &sys_reset
+&kp ESCAPE   &sys_reset      &kp UP_ARROW    &trans           &bt BT_SEL 0    &out OUT_USB  &out OUT_BLE  &studio_unlock  &trans           &sys_reset
 &bootloader  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &bt BT_SEL 1    &kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT_ARROW  &bootloader
 &trans       &kp LG(TAB)     &bt BT_CLR_ALL  &bt BT_CLR       &bt BT_SEL 2    &trans        &trans        &trans        &trans           &trans
                              &none           &trans           &trans          &trans        &trans        &none
