@@ -9,6 +9,7 @@
 
 / {
 	chosen {
+		/delete-property/ zmk,matrix_transform;
 		zmk,physical-layout = &tbkmini_layout;
 	};
 
